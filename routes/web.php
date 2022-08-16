@@ -24,6 +24,7 @@ use BookStack\Http\Controllers\RoleController;
 use BookStack\Http\Controllers\SearchController;
 use BookStack\Http\Controllers\SettingController;
 use BookStack\Http\Controllers\StatusController;
+use BookStack\Http\Controllers\SystemController;
 use BookStack\Http\Controllers\TagController;
 use BookStack\Http\Controllers\UserApiTokenController;
 use BookStack\Http\Controllers\UserController;
@@ -335,5 +336,10 @@ Route::post('/password/reset', [Auth\ResetPasswordController::class, 'reset']);
 
 // Metadata routes
 Route::view('/help/wysiwyg', 'help.wysiwyg');
+
+// V9 customisation
+Route::prefix('/system')->group(function () {
+    Route::get('/health-check', [SystemController::class, 'healthCheck']);
+});
 
 Route::fallback([HomeController::class, 'notFound'])->name('fallback');
