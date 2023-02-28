@@ -1,7 +1,8 @@
 :root {
-  --color-primary: #44ac33;
+  --color-primary: #47AC34;
   --color-primary-light: rgba(32,110,167,0.15);
-  --color-page: #206ea7;
+  --color-link: #47AC34;
+  --color-page: #47AC34;
   --color-page-draft: #7e50b1;
   --color-chapter: #af4d0d;
   --color-book: #077b70;
