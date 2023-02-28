@@ -26,7 +26,7 @@
     @yield('head')
 
     <!-- Custom Styles & Head Content -->
-    @include('common.custom-styles')
+<!--    @include('common.custom-styles')-->
     @include('common.custom-head')
 
     @stack('head')
