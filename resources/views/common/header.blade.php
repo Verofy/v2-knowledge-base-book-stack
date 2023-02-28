@@ -4,7 +4,7 @@
         <div>
             <a href="{{ url('/') }}" class="logo">
                 @if(setting('app-logo', '') !== 'none')
-                    <img class="logo-image" src="{{ url('/logo-support.svg') }}" alt="Logo">
+                    <img class="logo-image" src="{{ url('/logo-support-partner.png') }}" alt="Logo">
                 @endif
                 @if (setting('app-name-header'))
                     <!--span class="logo-text">{{ setting('app-name') }}</span-->
