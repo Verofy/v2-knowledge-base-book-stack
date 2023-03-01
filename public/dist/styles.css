@@ -725,6 +725,7 @@ h5, h6 {
 }
 .list-heading {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 h2.list-heading {
@@ -1962,6 +1963,9 @@ html.dark-mode .grid-card:hover {
   overflow: initial;
   min-height: 60vh;
   border-radius: 30px;
+}
+.content-wrap.card h1 {
+  font-weight: bold;
 }
 .content-wrap.card.auto-height {
   min-height: 0;
@@ -5261,7 +5265,7 @@ body.flexbox footer {
   margin-inline-end: 6px;
 }
 .book-contents .entity-list-item .icon:after {
-  opacity: 0.5;
+  opacity: 1;
 }
 .book-contents .entity-list-item .icon svg {
   display: none;
@@ -5670,6 +5674,10 @@ html.dark-mode ul.pagination li.active span {
 }
 .entity-list > .dropdown-container, .icon-list > .dropdown-container {
   display: block;
+}
+
+.entity-list .book-contents {
+  padding-left: 50px;
 }
 
 .icon-list hr {
@@ -6936,17 +6944,17 @@ html.dark-mode input.scroll-box-search, html.dark-mode .scroll-box-header-item {
   margin-inline-start: 12px;
   grid-template-columns: minmax(120px, max-content) 40px;
   font-size: 0.9rem;
-  border: 2px solid #DDD;
-  border-color: #ddd;
-  border-radius: 4px;
+  border: 1px solid #797979;
+  border-color: #797979;
+  border-radius: 8px;
 }
 html.dark-mode .list-sort-container .list-sort {
   border-color: #444;
 }
 .list-sort-container .list-sort-label {
-  font-weight: bold;
+  font-weight: normal;
   display: inline-block;
-  color: #555;
+  color: #797979;
 }
 html.dark-mode .list-sort-container .list-sort-label {
   color: #888;
@@ -6959,8 +6967,8 @@ html.dark-mode .list-sort-container .list-sort-label {
   cursor: pointer;
 }
 .list-sort-container .list-sort-dir {
-  border-inline-start: 2px solid #DDD;
-  color: #888;
+  border-inline-start: 1px solid #797979;
+  color: #797979;
   border-color: #ddd;
 }
 html.dark-mode .list-sort-container .list-sort-dir {

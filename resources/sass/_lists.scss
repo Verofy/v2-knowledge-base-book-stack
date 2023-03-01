@@ -9,7 +9,7 @@
     margin-inline-end: $-xs;
   }
   .icon:after {
-    opacity: 0.5;
+    opacity: 1;
   }
   .icon svg {
     display: none;
@@ -388,6 +388,9 @@ ul.pagination {
   > .dropdown-container {
     display: block;
   }
+}
+.entity-list .book-contents{
+  padding-left: 50px;
 }
 
 .icon-list hr {

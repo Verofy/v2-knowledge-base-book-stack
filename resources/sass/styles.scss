@@ -311,14 +311,14 @@ input.scroll-box-search, .scroll-box-header-item {
     margin-inline-start: $-s;
     grid-template-columns: minmax(120px, max-content) 40px;
     font-size: 0.9rem;
-    border: 2px solid #DDD;
-    @include lightDark(border-color, #ddd, #444);
-    border-radius: 4px;
+    border: 1px solid #797979;
+    @include lightDark(border-color, #797979, #444);
+    border-radius: 8px;
   }
   .list-sort-label {
-    font-weight: bold;
+    font-weight: normal;
     display: inline-block;
-    @include lightDark(color, #555, #888);
+    @include lightDark(color, #797979, #888);
   }
   .list-sort-type {
     text-align: start;
@@ -328,8 +328,8 @@ input.scroll-box-search, .scroll-box-header-item {
     cursor: pointer;
   }
   .list-sort-dir {
-    border-inline-start: 2px solid #DDD;
-    color: #888;
+    border-inline-start: 1px solid #797979;
+    color: #797979;
     @include lightDark(border-color, #ddd, #444);
     .svg-icon {
       transition: transform ease-in-out 120ms;

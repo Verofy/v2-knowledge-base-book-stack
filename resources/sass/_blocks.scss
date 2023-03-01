@@ -207,6 +207,9 @@
   overflow: initial;
   min-height: 60vh;
   border-radius: 30px;
+  h1{
+    font-weight: bold;
+  }
   &.auto-height {
     min-height: 0;
   }

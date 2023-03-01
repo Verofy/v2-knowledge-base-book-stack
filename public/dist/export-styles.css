@@ -140,6 +140,7 @@ h5, h6 {
 }
 .list-heading {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 h2.list-heading {
@@ -1267,6 +1268,9 @@ html.dark-mode .grid-card:hover {
   min-height: 60vh;
   border-radius: 30px;
 }
+.content-wrap.card h1 {
+  font-weight: bold;
+}
 .content-wrap.card.auto-height {
   min-height: 0;
 }
@@ -1522,7 +1526,7 @@ table.list-table td {
   margin-inline-end: 6px;
 }
 .book-contents .entity-list-item .icon:after {
-  opacity: 0.5;
+  opacity: 1;
 }
 .book-contents .entity-list-item .icon svg {
   display: none;
@@ -1931,6 +1935,10 @@ html.dark-mode ul.pagination li.active span {
 }
 .entity-list > .dropdown-container, .icon-list > .dropdown-container {
   display: block;
+}
+
+.entity-list .book-contents {
+  padding-left: 50px;
 }
 
 .icon-list hr {
