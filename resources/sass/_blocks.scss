@@ -156,7 +156,7 @@
 .grid-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ddd;
+  border: none;
   @include lightDark(border-color, #ddd, #000);
   margin-bottom: $-l;
   border-radius: 4px;
@@ -171,7 +171,9 @@
   }
   h2 {
     width: 100%;
-    font-size: 1.5em;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
     margin: 0 0 10px;
   }
   p {
@@ -189,6 +191,9 @@
   }
   .grid-card-content + .grid-card-footer {
     padding-top: 0;
+  }
+  .text-muted{
+    text-align: center;
   }
 }
 
