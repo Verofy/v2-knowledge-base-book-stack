@@ -1257,6 +1257,7 @@ html.dark-mode .grid-card:hover {
 }
 .grid-card .text-muted {
   text-align: center;
+  margin-top: -10px;
 }
 
 .book-grid-item .grid-card-footer p.small {
@@ -1274,6 +1275,9 @@ html.dark-mode .grid-card:hover {
   border-radius: 30px;
 }
 .content-wrap.card h1 {
+  font-weight: light;
+}
+.content-wrap.card h1.break-text {
   font-weight: bold;
 }
 .content-wrap.card.auto-height {
