@@ -1966,7 +1966,8 @@ html.dark-mode .grid-card:hover {
   font-weight: 100;
 }
 .content-wrap.card h1.break-text {
-  font-weight: bold;
+  font-weight: 100;
+  font-size: 2rem;
 }
 .content-wrap.card.auto-height {
   min-height: 0;
