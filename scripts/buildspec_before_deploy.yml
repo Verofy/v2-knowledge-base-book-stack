@@ -9,10 +9,13 @@ phases:
       # Copy default .env template from S3, add current release and upload it back to be used by CodeDeploy action.
       - |-
         if [ "$Branch_Name" = "STAGING" ]; then
-          s3_bucket="verofy-2-staging-private-env-files"
-        elif [ "$Branch_Name" = "PRODUCTION" ]; then
-          s3_bucket="verofy-2-production-private-env-files"
+          s3_bucket="verofy-2-staging-private-env-files/verofy-2-knowledge-base-book-stack"
+        elif [ "$Branch_Name" = "PRODUCTION_CUSTOMER" ]; then
+          s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-customer"
         fi
-      - aws s3 cp s3://$s3_bucket/verofy-2-knowledge-base-book-stack/.env.default .env
+        elif [ "$Branch_Name" = "PRODUCTION_PARTNER" ]; then
+          s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-partner"
+        fi
+      - aws s3 cp s3://$s3_bucket/.env.default .env
       - sed -i "s/SENTRY_RELEASE=0/SENTRY_RELEASE=$Commit_ID/g" .env
-      - aws s3 cp .env s3://$s3_bucket/verofy-2-knowledge-base-book-stack/.env
+      - aws s3 cp .env s3://$s3_bucket/.env
