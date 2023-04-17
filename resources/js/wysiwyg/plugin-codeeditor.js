@@ -9,7 +9,7 @@ function elemIsCodeBlock(elem) {
  * @param {function(string, string)} callback (Receives (code: string,language: string)
  */
 function showPopup(editor, code, language, callback) {
-    window.components.first('code-editor').open(code, language, (newCode, newLang) => {
+    window.$components.first('code-editor').open(code, language, (newCode, newLang) => {
         callback(newCode, newLang)
         editor.focus()
     });
@@ -39,16 +39,16 @@ function defineCodeBlockCustomElement(editor) {
         constructor() {
             super();
             this.attachShadow({mode: 'open'});
-            const linkElem = document.createElement('link');
-            linkElem.setAttribute('rel', 'stylesheet');
-            linkElem.setAttribute('href', window.baseUrl('/dist/styles.css'));
+
+            const stylesToCopy = document.querySelectorAll('link[rel="stylesheet"]:not([media="print"])');
+            const copiedStyles = Array.from(stylesToCopy).map(styleEl => styleEl.cloneNode(false));
 
             const cmContainer = document.createElement('div');
             cmContainer.style.pointerEvents = 'none';
             cmContainer.contentEditable = 'false';
             cmContainer.classList.add('CodeMirrorContainer');
 
-            this.shadowRoot.append(linkElem, cmContainer);
+            this.shadowRoot.append(...copiedStyles, cmContainer);
         }
 
         getLanguage() {
@@ -111,10 +111,8 @@ function defineCodeBlockCustomElement(editor) {
             const container = this.shadowRoot.querySelector('.CodeMirrorContainer');
             const renderCodeMirror = (Code) => {
                 this.cm = Code.wysiwygView(container, content, this.getLanguage());
-                Code.updateLayout(this.cm);
-                setTimeout(() => {
-                    this.style.height = null;
-                }, 1);
+                setTimeout(() => Code.updateLayout(this.cm), 10);
+                setTimeout(() => this.style.height = null, 12);
             };
 
             window.importVersioned('code').then((Code) => {
@@ -150,6 +148,14 @@ function register(editor, url) {
     editor.ui.registry.addButton('codeeditor', {
         tooltip: 'Insert code block',
         icon: 'codeblock',
+        onAction() {
+            editor.execCommand('codeeditor');
+        }
+    });
+
+    editor.ui.registry.addButton('editcodeeditor', {
+        tooltip: 'Edit code block',
+        icon: 'edit-block',
         onAction() {
             editor.execCommand('codeeditor');
         }
@@ -208,6 +214,15 @@ function register(editor, url) {
                 el.unwrap();
             }
         });
+    });
+
+    editor.ui.registry.addContextToolbar('codeeditor', {
+        predicate: function (node) {
+            return node.nodeName.toLowerCase() === 'code-block';
+        },
+        items: 'editcodeeditor',
+        position: 'node',
+        scope: 'node'
     });
 
     editor.on('PreInit', () => {

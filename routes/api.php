@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Routes for the BookStack API.
+ * Routes have a uri prefix of /api/.
+ * Controllers are all within app/Http/Controllers/Api.
+ */
+
 use BookStack\Http\Controllers\Api\ApiDocsController;
 use BookStack\Http\Controllers\Api\AttachmentApiController;
 use BookStack\Http\Controllers\Api\BookApiController;
@@ -7,18 +13,16 @@ use BookStack\Http\Controllers\Api\BookExportApiController;
 use BookStack\Http\Controllers\Api\BookshelfApiController;
 use BookStack\Http\Controllers\Api\ChapterApiController;
 use BookStack\Http\Controllers\Api\ChapterExportApiController;
+use BookStack\Http\Controllers\Api\ContentPermissionApiController;
+use BookStack\Http\Controllers\Api\ImageGalleryApiController;
 use BookStack\Http\Controllers\Api\PageApiController;
 use BookStack\Http\Controllers\Api\PageExportApiController;
 use BookStack\Http\Controllers\Api\RecycleBinApiController;
+use BookStack\Http\Controllers\Api\RoleApiController;
 use BookStack\Http\Controllers\Api\SearchApiController;
 use BookStack\Http\Controllers\Api\UserApiController;
 use Illuminate\Support\Facades\Route;
 
-/**
- * Routes for the BookStack API.
- * Routes have a uri prefix of /api/.
- * Controllers are all within app/Http/Controllers/Api.
- */
 Route::get('docs.json', [ApiDocsController::class, 'json']);
 
 Route::get('attachments', [AttachmentApiController::class, 'list']);
@@ -58,7 +62,13 @@ Route::delete('pages/{id}', [PageApiController::class, 'delete']);
 Route::get('pages/{id}/export/html', [PageExportApiController::class, 'exportHtml']);
 Route::get('pages/{id}/export/pdf', [PageExportApiController::class, 'exportPdf']);
 Route::get('pages/{id}/export/plaintext', [PageExportApiController::class, 'exportPlainText']);
-Route::get('pages/{id}/export/markdown', [PageExportApiController::class, 'exportMarkDown']);
+Route::get('pages/{id}/export/markdown', [PageExportApiController::class, 'exportMarkdown']);
+
+Route::get('image-gallery', [ImageGalleryApiController::class, 'list']);
+Route::post('image-gallery', [ImageGalleryApiController::class, 'create']);
+Route::get('image-gallery/{id}', [ImageGalleryApiController::class, 'read']);
+Route::put('image-gallery/{id}', [ImageGalleryApiController::class, 'update']);
+Route::delete('image-gallery/{id}', [ImageGalleryApiController::class, 'delete']);
 
 Route::get('search', [SearchApiController::class, 'all']);
 
@@ -74,6 +84,15 @@ Route::get('users/{id}', [UserApiController::class, 'read']);
 Route::put('users/{id}', [UserApiController::class, 'update']);
 Route::delete('users/{id}', [UserApiController::class, 'delete']);
 
+Route::get('roles', [RoleApiController::class, 'list']);
+Route::post('roles', [RoleApiController::class, 'create']);
+Route::get('roles/{id}', [RoleApiController::class, 'read']);
+Route::put('roles/{id}', [RoleApiController::class, 'update']);
+Route::delete('roles/{id}', [RoleApiController::class, 'delete']);
+
 Route::get('recycle-bin', [RecycleBinApiController::class, 'list']);
 Route::put('recycle-bin/{deletionId}', [RecycleBinApiController::class, 'restore']);
 Route::delete('recycle-bin/{deletionId}', [RecycleBinApiController::class, 'destroy']);
+
+Route::get('content-permissions/{contentType}/{contentId}', [ContentPermissionApiController::class, 'read']);
+Route::put('content-permissions/{contentType}/{contentId}', [ContentPermissionApiController::class, 'update']);

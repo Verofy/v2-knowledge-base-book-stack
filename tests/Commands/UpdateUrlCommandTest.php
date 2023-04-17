@@ -2,7 +2,6 @@
 
 namespace Tests\Commands;
 
-use BookStack\Entities\Models\Page;
 use Symfony\Component\Console\Exception\RuntimeException;
 use Tests\TestCase;
 
@@ -10,7 +9,7 @@ class UpdateUrlCommandTest extends TestCase
 {
     public function test_command_updates_page_content()
     {
-        $page = Page::query()->first();
+        $page = $this->entities->page();
         $page->html = '<a href="https://example.com/donkeys"></a>';
         $page->save();
 
@@ -40,6 +39,8 @@ class UpdateUrlCommandTest extends TestCase
         setting()->put('my-custom-item', 'https://example.com/donkey/cat');
         $this->runUpdate('https://example.com', 'https://cats.example.com');
 
+        setting()->flushCache();
+
         $settingVal = setting('my-custom-item');
         $this->assertEquals('https://cats.example.com/donkey/cat', $settingVal);
     }
@@ -48,6 +49,9 @@ class UpdateUrlCommandTest extends TestCase
     {
         setting()->put('my-custom-array-item', [['name' => 'a https://example.com/donkey/cat url']]);
         $this->runUpdate('https://example.com', 'https://cats.example.com');
+
+        setting()->flushCache();
+
         $settingVal = setting('my-custom-array-item');
         $this->assertEquals('a https://cats.example.com/donkey/cat url', $settingVal[0]['name']);
     }
