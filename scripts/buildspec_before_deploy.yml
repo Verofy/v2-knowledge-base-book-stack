@@ -12,7 +12,6 @@ phases:
           s3_bucket="verofy-2-staging-private-env-files/verofy-2-knowledge-base-book-stack"
         elif [ "$Branch_Name" = "PRODUCTION_CUSTOMER" ]; then
           s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-customer"
-        fi
         elif [ "$Branch_Name" = "PRODUCTION_PARTNER" ]; then
           s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-partner"
         fi
