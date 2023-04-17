@@ -1,10 +1,12 @@
 #!/bin/bash
 
 echo Deployment Group Name: $DEPLOYMENT_GROUP_NAME
-if [ "$DEPLOYMENT_GROUP_NAME" == "v2-production-knowledge-base-book-stack" ]; then
-  s3_bucket="verofy-2-production-private-env-files"
+if [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-PROD-customer" ]; then
+  s3_bucket="verofy-2-production-private-env-file/verofy-2-knowledge-base-book-stack-customer"
+if [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-PROD-partner" ]; then
+  s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-partner"
 elif [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-STG" ]; then
-  s3_bucket="verofy-2-staging-private-env-files"
+  s3_bucket="verofy-2-staging-private-env-files/verofy-2-knowledge-base-book-stack"
 fi
 
 # Set permissions to storage and bootstrap cache
@@ -28,7 +30,7 @@ fi
 
 #
 # Copy env file from a S3
-sudo aws --region eu-west-1 s3 cp "s3://$s3_bucket/verofy-2-knowledge-base-book-stack/.env" "/var/www/html/.env"
+sudo aws --region eu-west-1 s3 cp "s3://$s3_bucket/.env" "/var/www/html/.env"
 retval=$?
 echo "$retval"
 if [ $retval -ne 0 ]; then
