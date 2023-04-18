@@ -2,7 +2,7 @@
 
 echo Deployment Group Name: $DEPLOYMENT_GROUP_NAME
 if [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-PROD-customer" ]; then
-  s3_bucket="verofy-2-production-private-env-file/verofy-2-knowledge-base-book-stack-customer"
+  s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-customer"
 elif [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-PROD-partner" ]; then
   s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-partner"
 elif [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-STG" ]; then
