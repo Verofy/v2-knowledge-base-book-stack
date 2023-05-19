@@ -81,6 +81,7 @@
         </div>
     @endif
 
+{{--
     <div id="details" class="mb-xl">
         <h5>{{ trans('common.details') }}</h5>
         <div class="blended-links">
@@ -102,13 +103,15 @@
             @endif
         </div>
     </div>
-
+--}}
+{{--
     @if(count($activity) > 0)
         <div class="mb-xl">
             <h5>{{ trans('entities.recent_activity') }}</h5>
             @include('common.activity-list', ['activity' => $activity])
         </div>
     @endif
+--}}
 @stop
 
 @section('right')
