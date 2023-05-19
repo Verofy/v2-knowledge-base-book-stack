@@ -16,6 +16,7 @@
     </div>
 @endif
 
+{{--
 <div class="mb-xl">
     <h5>{{ trans('entities.' . (auth()->check() ? 'my_recently_viewed' : 'books_recent')) }}</h5>
     @include('entities.list', [
@@ -24,6 +25,7 @@
         'emptyText' => auth()->check() ? trans('entities.no_pages_viewed') : trans('entities.books_empty')
         ])
 </div>
+--}}
 
 <div class="mb-xl">
     <h5>{{ trans('entities.recently_updated_pages') }}</h5>
