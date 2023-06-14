@@ -61,7 +61,7 @@ class HomeController extends Controller
         if ($homepageOption === 'bookshelves' || $homepageOption === 'books') {
             $key = $homepageOption;
             $view = setting()->getForCurrentUser($key . '_view_type');
-            $sort = setting()->getForCurrentUser($key . '_sort', 'name');
+            $sort = setting()->getForCurrentUser($key . '_sort', 'order');
             $order = setting()->getForCurrentUser($key . '_sort_order', 'asc');
 
             $sortOptions = [
@@ -79,7 +79,7 @@ class HomeController extends Controller
         }
 
         if ($homepageOption === 'bookshelves') {
-            $shelves = app(BookshelfRepo::class)->getAllPaginated(18, $commonData['sort'], $commonData['order']);
+            $shelves = app(BookshelfRepo::class)->getAllPaginated(19, $commonData['sort'], $commonData['order']);
             $data = array_merge($commonData, ['shelves' => $shelves]);
 
             return view('home.shelves', $data);

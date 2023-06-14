@@ -31,7 +31,7 @@ class BookshelfController extends Controller
     public function index()
     {
         $view = setting()->getForCurrentUser('bookshelves_view_type');
-        $sort = setting()->getForCurrentUser('bookshelves_sort', 'name');
+        $sort = setting()->getForCurrentUser('bookshelves_sort', 'order');
         $order = setting()->getForCurrentUser('bookshelves_sort_order', 'asc');
         $sortOptions = [
             'name'       => trans('common.sort_name'),

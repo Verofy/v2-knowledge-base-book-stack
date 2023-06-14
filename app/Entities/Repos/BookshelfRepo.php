@@ -36,6 +36,17 @@ class BookshelfRepo
     }
 
     /**
+     * Get all bookshelves in a collection format.
+     */
+    public function getAll( string $sort = 'name', string $order = 'asc'): Collection
+    {
+        return Bookshelf::visible()
+            ->with(['visibleBooks', 'cover'])
+            ->orderBy($sort, $order)
+            ->get();
+    }
+
+    /**
      * Get the bookshelves that were most recently viewed by this user.
      */
     public function getRecentlyViewed(int $count = 20): Collection
