@@ -45,18 +45,20 @@ return [
     'cannot_create_thumbs' => 'De server kon geen miniaturen maken. Controleer of je de GD PHP extensie geïnstalleerd hebt.',
     'server_upload_limit' => 'De server staat geen uploads van deze grootte toe. Probeer een kleinere bestandsgrootte.',
     'uploaded'  => 'De server staat geen uploads van deze grootte toe. Probeer een kleinere bestandsgrootte.',
-    'file_upload_timeout' => 'Het uploaden van het bestand is verlopen.',
 
     // Drawing & Images
     'image_upload_error' => 'Er is een fout opgetreden bij het uploaden van de afbeelding',
     'image_upload_type_error' => 'Het geüploade afbeeldingstype is ongeldig',
+    'image_upload_replace_type' => 'Image file replacements must be of the same type',
     'drawing_data_not_found' => 'De gegevens van de tekening konden niet worden geladen. Het tekenbestand bestaat misschien niet meer of u hebt geen machtiging om het te openen.',
 
     // Attachments
     'attachment_not_found' => 'Bijlage niet gevonden',
+    'attachment_upload_error' => 'Er is een fout opgetreden bij het uploaden van het bestand',
 
     // Pages
     'page_draft_autosave_fail' => 'Kon het concept niet opslaan. Zorg ervoor dat je een werkende internetverbinding hebt',
+    'page_draft_delete_fail' => 'Failed to delete page draft and fetch current page saved content',
     'page_custom_home_deletion' => 'Een pagina die als startpagina is ingesteld, kan niet verwijderd worden',
 
     // Entities
