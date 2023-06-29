@@ -14,6 +14,8 @@ phases:
           s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-customer"
         elif [ "$Branch_Name" = "PRODUCTION_PARTNER" ]; then
           s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-partner"
+        elif [ "$Branch_Name" = "PRODUCTION_INTERNAL" ]; then
+          s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-internal"
         fi
       - aws s3 cp s3://$s3_bucket/.env.default .env
       - sed -i "s/SENTRY_RELEASE=0/SENTRY_RELEASE=$Commit_ID/g" .env
