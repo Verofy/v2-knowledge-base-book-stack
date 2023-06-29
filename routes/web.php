@@ -6,6 +6,7 @@ use BookStack\Api\ApiDocsController;
 use BookStack\Api\UserApiTokenController;
 use BookStack\App\HomeController;
 use BookStack\Entities\Controllers as EntityControllers;
+use BookStack\Http\Controllers\SystemController;
 use BookStack\Http\Middleware\VerifyCsrfToken;
 use BookStack\Permissions\PermissionsController;
 use BookStack\References\ReferenceController;
@@ -333,5 +334,10 @@ Route::post('/password/reset', [AccessControllers\ResetPasswordController::class
 
 // Metadata routes
 Route::view('/help/wysiwyg', 'help.wysiwyg');
+
+// V9 customisation
+Route::prefix('/system')->group(function () {
+    Route::get('/health-check', [SystemController::class, 'healthCheck']);
+});
 
 Route::fallback([HomeController::class, 'notFound'])->name('fallback');
