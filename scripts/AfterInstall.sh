@@ -31,6 +31,22 @@ exit retval;
 fi
 
 #
+# Build NPM
+sudo npm install
+retval=$?
+echo "$retval"
+if [ $retval -ne 0 ]; then
+exit retval;
+fi
+
+sudo npm run build
+retval=$?
+echo "$retval"
+if [ $retval -ne 0 ]; then
+exit retval;
+fi
+
+#
 # Copy env file from a S3
 sudo aws --region eu-west-1 s3 cp "s3://$s3_bucket/.env" "/var/www/html/.env"
 retval=$?
