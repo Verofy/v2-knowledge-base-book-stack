@@ -32,14 +32,14 @@ fi
 
 #
 # Build NPM
-sudo npm install
+sudo /root/.nvm/versions/node/v16.14.0/bin/npm --prefix /var/www/html/ install
 retval=$?
 echo "$retval"
 if [ $retval -ne 0 ]; then
 exit retval;
 fi
 
-sudo npm run build
+sudo /root/.nvm/versions/node/v16.14.0/bin/npm --prefix /var/www/html/ run build
 retval=$?
 echo "$retval"
 if [ $retval -ne 0 ]; then
