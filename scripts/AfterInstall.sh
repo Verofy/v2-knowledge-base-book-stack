@@ -14,9 +14,13 @@ fi
 # Set permissions to storage and bootstrap cache
 sudo chmod -R 0775 /var/www/html/storage
 sudo chmod -R 0775 /var/www/html/bootstrap/cache
+sudo chmod -R 0775 /var/www/html/public/uploads
 sudo chmod -R 0775 /var/www/html/storage/framework/cache
 sudo chmod -R 0775 /var/www/html/storage/framework/cache/data
 sudo chgrp -R www-data /var/www/html
+
+# Limit the .env file to only be readable by the user and group, and only writable by the user.
+sudo chmod 640 /var/www/html/.env
 
 #
 cd /var/www/html
