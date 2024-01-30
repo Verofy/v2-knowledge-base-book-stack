@@ -613,7 +613,7 @@ table {
 html {
   height: 100%;
   overflow-y: scroll;
-  background-color: #a8ceff;
+  background-color: #f0f7ff;
 }
 html.flexbox {
   overflow-y: hidden;
@@ -4946,7 +4946,7 @@ header .search-box input {
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
-  color: #EEE;
+  color: #fff;
   z-index: 2;
   height: auto;
   padding: 9px;
@@ -4955,6 +4955,13 @@ header .search-box input {
 header .search-box input:focus {
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.4);
+}
+header .search-box input::placeholder {
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+header .search-box input::-ms-input-placeholder { /* Edge 12 -18 */
+  color: #fff;
 }
 header .search-box button {
   z-index: 1;
@@ -5009,7 +5016,7 @@ header .search-box:focus-within button {
 }
 
 .logo-image {
-  height: 43px;
+  height: 30px;
 }
 
 .mobile-menu-toggle {
