@@ -1679,11 +1679,11 @@ body.flexbox #content {
   }
 
   .tri-layout-left-contents > *, .tri-layout-right-contents > * {
-    opacity: 0.6;
+    opacity: 1;
     transition: opacity ease-in-out 120ms;
   }
   html.dark-mode .tri-layout-left-contents > *, html.dark-mode .tri-layout-right-contents > * {
-    opacity: 0.7;
+    opacity: 1;
   }
   .tri-layout-left-contents > *:hover, .tri-layout-left-contents > *:focus-within, .tri-layout-right-contents > *:hover, .tri-layout-right-contents > *:focus-within {
     opacity: 1 !important;
@@ -5016,7 +5016,7 @@ header .search-box:focus-within button {
 }
 
 .logo-image {
-  height: 30px;
+  height: 24px;
 }
 
 .mobile-menu-toggle {
