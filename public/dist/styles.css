@@ -5028,7 +5028,7 @@ header .search-box:focus-within button {
   padding: 0 6px;
   position: absolute;
   right: 16px;
-  top: 13px;
+  top: 8px;
   line-height: 1;
   cursor: pointer;
   user-select: none;
