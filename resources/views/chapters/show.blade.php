@@ -63,8 +63,8 @@
 @stop
 
 @section('right')
-
-    <div class="mb-xl">
+{{--
+    <!--div class="mb-xl">
         <h5>{{ trans('common.details') }}</h5>
         <div class="blended-links">
             @include('entities.meta', ['entity' => $chapter])
@@ -164,7 +164,8 @@
                 @include('entities.export-menu', ['entity' => $chapter])
             @endif
         </div>
-    </div>
+    </div-->
+    --}}
 @stop
 
 @section('left')

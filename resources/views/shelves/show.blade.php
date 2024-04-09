@@ -82,7 +82,7 @@
     @endif
 
 {{--
-    <div id="details" class="mb-xl">
+    <!--div id="details" class="mb-xl">
         <h5>{{ trans('common.details') }}</h5>
         <div class="blended-links">
             @include('entities.meta', ['entity' => $shelf])
@@ -102,7 +102,7 @@
                 </div>
             @endif
         </div>
-    </div>
+    </div-->
 --}}
 {{--
     @if(count($activity) > 0)

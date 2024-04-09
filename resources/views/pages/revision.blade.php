@@ -1,12 +1,14 @@
 @extends('layouts.tri')
 
 @section('left')
-    <div id="revision-details" class="entity-details mb-xl">
+{{--
+    <!--div id="revision-details" class="entity-details mb-xl">
         <h5>{{ trans('common.details') }}</h5>
         <div class="body text-small text-muted">
             @include('entities.meta', ['entity' => $revision])
         </div>
-    </div>
+    </div-->
+    --}}
 @stop
 
 @section('body')

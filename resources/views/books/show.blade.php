@@ -67,7 +67,8 @@
 @stop
 
 @section('right')
-    <div class="mb-xl">
+{{--
+    <!--div class="mb-xl">
         <h5>{{ trans('common.details') }}</h5>
         <div class="blended-links">
             @include('entities.meta', ['entity' => $book])
@@ -87,9 +88,10 @@
                 </div>
             @endif
         </div>
-    </div>
-
-    <div class="actions mb-xl">
+    </div-->
+--}}
+{{--
+    <!--div class="actions mb-xl">
         <h5>{{ trans('common.actions') }}</h5>
         <div class="icon-list text-primary">
 
@@ -146,8 +148,8 @@
                 @include('entities.export-menu', ['entity' => $book])
             @endif
         </div>
-    </div>
-
+    </div-->
+{{--
 @stop
 
 @section('left')
