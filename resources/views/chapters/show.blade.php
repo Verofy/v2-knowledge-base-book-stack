@@ -63,7 +63,7 @@
 @stop
 
 @section('right')
-
+{{--
     <div class="mb-xl">
         <h5>{{ trans('common.details') }}</h5>
         <div class="blended-links">
@@ -165,6 +165,7 @@
             @endif
         </div>
     </div>
+        --}}
 @stop
 
 @section('left')

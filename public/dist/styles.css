@@ -1009,6 +1009,11 @@ li.checkbox-item li.checkbox-item, li.checkbox-item li.task-list-item, li.task-l
   text-align: end;
 }
 
+.grid-card h2.text-limit-lines-2 small {
+  position: relative;
+  top: -10px;
+}
+
 @media screen and (min-width: 360px) {
   .text-xxs-center {
     text-align: center;
@@ -5028,7 +5033,7 @@ header .search-box:focus-within button {
   padding: 0 6px;
   position: absolute;
   right: 16px;
-  top: 13px;
+  top: 6px;
   line-height: 1;
   cursor: pointer;
   user-select: none;
