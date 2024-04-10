@@ -1009,6 +1009,11 @@ li.checkbox-item li.checkbox-item, li.checkbox-item li.task-list-item, li.task-l
   text-align: end;
 }
 
+.grid-card h2.text-limit-lines-2 small {
+  position: relative;
+  top: -10px;
+}
+
 @media screen and (min-width: 360px) {
   .text-xxs-center {
     text-align: center;
