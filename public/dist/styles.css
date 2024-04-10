@@ -681,7 +681,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   position: relative;
   display: block;
-  color: #1D1D1B;
+  color: #3a3a3a;
 }
 html.dark-mode h1, html.dark-mode h2, html.dark-mode h3, html.dark-mode h4, html.dark-mode h5, html.dark-mode h6 {
   color: #BBB;
@@ -1199,7 +1199,7 @@ html.dark-mode .primary-background-light .text-primary {
 }
 
 .text-muted {
-  color: #575757 !important;
+  color: #3a3a3a !important;
   fill: currentColor !important;
 }
 html.dark-mode .text-muted {
