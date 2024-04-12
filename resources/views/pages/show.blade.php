@@ -76,6 +76,7 @@
 @stop
 
 @section('right')
+{{--
     <div id="page-details" class="entity-details mb-xl">
         <h5>{{ trans('common.details') }}</h5>
         <div class="blended-links">
@@ -137,7 +138,7 @@
             @endif
         </div>
     </div>
-{{--
+
     <div class="actions mb-xl">
         <h5>{{ trans('common.actions') }}</h5>
 
