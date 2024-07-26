@@ -15,8 +15,8 @@
     RewriteRule ^ %1 [L,R=301]
 
     # Handle Front Controller...
-    RewriteCond %{HTTP_HOST} www.active.support
-    RewriteRule (.*) https://active.support.com/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} www.internal.active.support
+    RewriteRule (.*) https://internal.active.support.com/$1 [R=301,L]
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]

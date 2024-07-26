@@ -1,7 +1,9 @@
 #!/bin/bash
 
 echo Deployment Group Name: $DEPLOYMENT_GROUP_NAME
-if [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-PROD-customer" ]; then
+if [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-PROD-internal" ]; then
+  s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-internal"
+elif [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-PROD-customer" ]; then
   s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-customer"
 elif [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-PROD-partner" ]; then
   s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-partner"
@@ -12,9 +14,10 @@ fi
 # Set permissions to storage and bootstrap cache
 sudo chmod -R 0775 /var/www/html/storage
 sudo chmod -R 0775 /var/www/html/bootstrap/cache
+sudo chmod -R 0775 /var/www/html/public/uploads
 sudo chmod -R 0775 /var/www/html/storage/framework/cache
 sudo chmod -R 0775 /var/www/html/storage/framework/cache/data
-sudo chgrp -R www-data /var/www/html
+sudo chown -R www-data:www-data /var/www/html
 
 #
 cd /var/www/html
@@ -22,6 +25,22 @@ cd /var/www/html
 #
 # Run composer
 sudo /usr/local/bin/composer install --no-ansi --no-dev --ignore-platform-reqs --no-interaction --no-progress --prefer-dist --no-scripts -d /var/www/html
+retval=$?
+echo "$retval"
+if [ $retval -ne 0 ]; then
+exit retval;
+fi
+
+#
+# Build NPM
+sudo npm install
+retval=$?
+echo "$retval"
+if [ $retval -ne 0 ]; then
+exit retval;
+fi
+
+sudo npm run build
 retval=$?
 echo "$retval"
 if [ $retval -ne 0 ]; then
