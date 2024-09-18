@@ -7022,4 +7022,28 @@ table.table .table-entity-item {
   display: none !important;
 }
 
+/* custom changes */
+.tri-layout-right-contents {
+    overflow-y: visible;
+}
+    
+.tri-layout-right-contents .dropdown-menu {
+    right: 0;
+    overflow-y: auto;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.tri-layout-right-contents .dropdown-menu.wide {
+    min-width: 300px;
+}
+
+@media screen and (max-width: 1399px) {
+    .tri-layout-right-contents .dropdown-menu {
+        left: 0!important;
+        right: 50%!important;
+        transform: none;
+    }   
+}
+
 /*# sourceMappingURL=styles.css.map */
