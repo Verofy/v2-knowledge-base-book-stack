@@ -5,6 +5,8 @@ if [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-PROD-customer" ];
   s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-customer"
 elif [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-PROD-partner" ]; then
   s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-partner"
+elif [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-PROD-partner-support" ]; then
+    s3_bucket="verofy-2-production-private-env-files/verofy-2-knowledge-base-book-stack-partner-support"
 elif [ "$DEPLOYMENT_GROUP_NAME" == "v2-knowledge-base-book-stack-STG" ]; then
   s3_bucket="verofy-2-staging-private-env-files/verofy-2-knowledge-base-book-stack"
 fi
